@@ -32,12 +32,16 @@ const settings = {
 };
 
 
-
+let first = 0; 
 
 let listchaus = document.getElementById('shoesList');
 let pagin = document.getElementById('pagination');
 
 let nombrePage = Math.ceil(settings.shoes.length / settings.itemsPerPage);
+
+
+
+
 
 
 
@@ -74,30 +78,43 @@ window.addEventListener("load", () => {
     for (i = 1; i <= nombrePage; i++) {
 
 
-
+        
         let liElement = document.createElement("li");
         liElement.classList.add('page-item');
+      
 
         lienA = document.createElement("a");
-        lienA.classList.add("page-link", "font-weight-bold", "text-dark");
+        lienA.classList.add("page-link", "font-weight-bold", "text-dark", "unselectedPaginator");
         lienA.textContent = i;
+
+
+
+
 
         liElement.appendChild(lienA);
         pageitem.appendChild(liElement);
-
-
-       
-
-
-
+    
+    
+    
     };
- pagin.appendChild(pageitem);
+
+  
+    
+    
+    
+    
+    
+    
+    pagin.appendChild(pageitem);
 
     console.log(pageitem);
+    
+    });
 
 
 
-});
+    
+
 
 
 
