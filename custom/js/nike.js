@@ -39,6 +39,8 @@ let pagin = document.getElementById('pagination');
 
 let nombrePage = Math.ceil(settings.shoes.length / settings.itemsPerPage);
 
+let currentPage = 1;
+
 
 
 
@@ -75,41 +77,85 @@ window.addEventListener("load", () => {
 
 
 
+
+
     for (i = 1; i <= nombrePage; i++) {
 
-
+     
         
         let liElement = document.createElement("li");
         liElement.classList.add('page-item');
       
 
         lienA = document.createElement("a");
-        lienA.classList.add("page-link", "font-weight-bold", "text-dark", "unselectedPaginator");
+        lienA.classList.add("page-link");
+
+        let paginationHtml = '';
+        
+        paginationHtml += `<a class="page-link font-weight-bold text-dark selectedPaginator">1</a></li>
+        <li class="page-item" data-start="6"><a class="page-link font-weight-bold text-dark unselectedPaginator">2</a></li>
+        <li class="page-item" data-start="12"><a class="page-link font-weight-bold text-dark unselectedPaginator">3</a></li>
+        <li class="page-item" data-start="18"><a class="page-link font-weight-bold text-dark unselectedPaginator">4</a>`;
+        
         lienA.textContent = i;
 
 
+        lienA.addEventListener
+        
 
+       
 
 
         liElement.appendChild(lienA);
         pageitem.appendChild(liElement);
+
+
+
     
     
-    
+
+
+
+
+
+
+
     };
 
   
-    
-    
-    
-    
-    
-    
-    pagin.appendChild(pageitem);
 
-    console.log(pageitem);
-    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+pagin.appendChild(pageitem);
+
+    console.log(pageitem);  
+        
+        
+     
+
+
+
+
     });
+    
+    
+    
+    
+
+    
+  
 
 
 
